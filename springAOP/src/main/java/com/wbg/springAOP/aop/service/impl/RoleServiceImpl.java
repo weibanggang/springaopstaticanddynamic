@@ -1,11 +1,13 @@
-package com.wbg.springAOP.service.impl;
+package com.wbg.springAOP.aop.service.impl;
 
+import com.wbg.springAOP.aop.service.RoleService;
 import com.wbg.springAOP.entity.Role;
-import com.wbg.springAOP.service.RoleService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RoleServiceImpl implements RoleService {
     @Override
-    public void printRoleInfo(Role role) {
+    public void printRoleInfo(Role role, int sort) {
         System.out.println("id = "+role.getId()+", roleName = '"+role.getId()+"', note = '"+role.getNote()+"'");
     }
 

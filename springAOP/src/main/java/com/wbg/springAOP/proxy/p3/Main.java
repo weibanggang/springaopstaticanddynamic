@@ -10,6 +10,17 @@ import java.lang.reflect.Proxy;
 
 public class Main {
     public static void main(String[] args) {
+     /*   ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+     Examable examable = (Examable) Proxy.newProxyInstance(classLoader,new Class[]{Examable.class},new JdkProxyGenerator(new Student()));
+     examable.exam();
+
+     Sleepable sleepable = (Sleepable) Proxy.newProxyInstance(classLoader,new Class[]{Sleepable.class},new JdkProxyGenerator(new Girl()));
+     sleepable.sleep()*/;
+
+        Sleepable sleepable1 = (Sleepable) new JdkProxyGenerator().getProxyInstance(new Girl());
+        sleepable1.sleep();
+    }
+    public static void  ad(){
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         Examable examable = (Examable) Proxy.newProxyInstance(
                 classLoader, new Class[]{Examable.class},
